@@ -157,6 +157,10 @@ then
     export SYSTEM_COVERAGE="1"
 fi
 
+env
+echo "Pausing for debugging...."
+sleep 80000
+
 # Try three times to bring up the frontend
 for ATTEMPT in 1 2 3
 do
