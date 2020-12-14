@@ -157,10 +157,6 @@ then
     export SYSTEM_COVERAGE="1"
 fi
 
-env
-echo "Running vagrant up"
-sleep 80000
-
 # Try three times to bring up the frontend
 for ATTEMPT in 1 2 3
 do
@@ -183,6 +179,10 @@ for SETUP_FILE in set-up.d/*
 do
     if [[ -f $SETUP_FILE && -x $SETUP_FILE && $(basename $SETUP_FILE) != _* ]]
     then
-        ./$SETUP_FILE $STACKI_ISO "${EXTRA_ISOS[@]}"
+        echo ./$SETUP_FILE $STACKI_ISO "${EXTRA_ISOS[@]}"
     fi
 done
+
+env
+echo "SLEEPING"
+sleep 80000
