@@ -183,9 +183,6 @@ do
     if [[ -f $SETUP_FILE && -x $SETUP_FILE && $(basename $SETUP_FILE) != _* ]]
     then
         # ./$SETUP_FILE $STACKI_ISO "${EXTRA_ISOS[@]}"
-        echo ./$SETUP_FILE $STACKI_ISO "${EXTRA_ISOS[@]}"
+        ./$SETUP_FILE $STACKI_ISO "${EXTRA_ISOS[@]}"
     fi
 done
-
-env
-sleep 80000
