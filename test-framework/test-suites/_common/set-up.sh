@@ -139,6 +139,9 @@ cat > ".cache/state.json" <<EOF
 }
 EOF
 
+echo "RUN THIS: source ../../bin/activate"
+cat .cache/state.json
+
 # Make sure we have the virtualenv activated
 if [[ -z $VIRTUAL_ENV ]]
 then
@@ -179,6 +182,10 @@ for SETUP_FILE in set-up.d/*
 do
     if [[ -f $SETUP_FILE && -x $SETUP_FILE && $(basename $SETUP_FILE) != _* ]]
     then
-        ./$SETUP_FILE $STACKI_ISO "${EXTRA_ISOS[@]}"
+        # ./$SETUP_FILE $STACKI_ISO "${EXTRA_ISOS[@]}"
+        echo ./$SETUP_FILE $STACKI_ISO "${EXTRA_ISOS[@]}"
     fi
 done
+
+env
+sleep 80000
