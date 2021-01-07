@@ -47,10 +47,10 @@ do
                 fi
 
                 # Copy the EXTRA_ISO to the .cache directory, if needed
-                if [[ "$(cd "$(dirname "$1")"; pwd)" != "$CACHE_DIR" ]]
-                then
-                    cp "$EXTRA_ISO" "$CACHE_DIR" 2>/dev/null
-                fi
+                #if [[ "$(cd "$(dirname "$1")"; pwd)" != "$CACHE_DIR" ]]
+                #then
+                cp -n "$EXTRA_ISO" "$CACHE_DIR" 2>/dev/null
+                #fi
 
                 # Add the filename EXTRA_ISOS array, which will be accessible
                 # under /export/isos/ inside the frontend VM
