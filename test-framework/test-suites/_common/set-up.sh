@@ -139,6 +139,8 @@ cat > ".cache/state.json" <<EOF
 }
 EOF
 
+cat .cache/state.json
+
 # Make sure we have the virtualenv activated
 if [[ -z $VIRTUAL_ENV ]]
 then
