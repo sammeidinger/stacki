@@ -247,6 +247,9 @@ then
 
         ./test-suites/system/run-tests.sh --coverage
     else
+        sh 'env'
+        echo ./test-suites/system/set-up.sh $STACKI_ISO "${EXTRA_ISOS[@]}"
+        exit
         ./test-suites/system/set-up.sh $STACKI_ISO "${EXTRA_ISOS[@]}"
 
         # Bail if set up failed
