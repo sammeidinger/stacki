@@ -49,6 +49,7 @@ do
                 # Copy the EXTRA_ISO to the .cache directory, if needed
                 if [[ "$(cd "$(dirname "$1")"; pwd)" != "$CACHE_DIR" ]]
                 then
+                    echo "cp $EXTRA_ISO $CACHE_DIR"
                     cp "$EXTRA_ISO" "$CACHE_DIR" 2>/dev/null
                 fi
 
